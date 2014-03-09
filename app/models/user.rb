@@ -7,6 +7,8 @@ class User < ActiveRecord::Base
 
   attr_accessor :login
 
+  PROVIDERS = [DB = 'DB', LDAP = 'LDAP']
+
   protected
 
   def self.find_first_by_auth_conditions(warden_conditions)
