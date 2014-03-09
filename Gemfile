@@ -15,6 +15,9 @@ gem 'devise', '3.0.0'
 gem 'active_directory_login', :path => "../active_directory_login"
 gem 'datacom_active_directory', :path => "../datacom_active_directory"
 
+gem 'squeel'
+
+
 group :development do
   gem "htmlbeautifier"
   gem 'quiet_assets'
