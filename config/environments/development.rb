@@ -26,4 +26,8 @@ AdTestApp::Application.configure do
   # This option may cause significant delays in view rendering with a large
   # number of complex assets.
   config.assets.debug = true
+
+  config_path = "#{Rails.root}/config/environment.yml"
+  ENV.update(YAML.load_file(config_path)) if File.exist?(config_path)
+
 end
