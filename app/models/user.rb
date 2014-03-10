@@ -9,6 +9,10 @@ class User < ActiveRecord::Base
 
   PROVIDERS = [DB = 'DB', LDAP = 'LDAP']
 
+  scope :staff,         -> { where(staff: true) }
+  scope :superusers, -> { where(superuser: true) }
+  scope :normals, -> { where(superuser: false, staff: false) }
+
   protected
 
   def self.find_first_by_auth_conditions(warden_conditions)
